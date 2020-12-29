@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +7,8 @@
 
 body {
   padding: 20px;
+  font-family: "Nunito Sans";
+  font-weight: 300;
 }
 
 .countries-description {
@@ -14,29 +18,71 @@ body {
 }
 
 img {
-  border-bottom: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
   height: 170px;
   width: 100%;
   object-fit: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .countries-card {
-  width: 277px;
-  height: 347px;
-  border: 1px solid black;
+  width: 266px;
+  height: 350px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.countries-card-intro {
+.countries-card:hover {
+  cursor: pointer;
+  margin-bottom: -2px;
+}
+
+.countries-card__intro {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-.search {
-  font-size: 1.5rem;
-  line-height: 1;
+.countries-card__intro h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.countries-card__intro h4 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.research-input {
+  background-color: #fff;
+  font-size: 1rem;
+  border: none;
   border-radius: 5px;
-  width: 30%;
+  width: 480px;
   height: 50px;
-  padding-left: 1rem;
-  margin-bottom: 30px;
+  padding-left: 4rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.09), 0 7px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+.research {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.research-filter {
+  background-color: #fff;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.09), 0 7px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  padding: 15px;
+}
+
+.countries-groups {
+  margin-right: 33px;
 }

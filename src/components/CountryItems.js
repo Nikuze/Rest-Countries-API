@@ -10,9 +10,15 @@ const CountryItems = ({ country }) => {
 
       <div className="countries-card__intro">
         <h3>{name}</h3>
-        <h4>Population: {population}</h4>
-        <h4>Region: {region}</h4>
-        <h4>Capital: {capital}</h4>
+        <h4>
+          <strong>Population:</strong> {population}
+        </h4>
+        <h4>
+          <strong>Region</strong>: {region}
+        </h4>
+        <h4>
+          <strong>Capital</strong>: {capital}
+        </h4>
       </div>
     </div>
   );
