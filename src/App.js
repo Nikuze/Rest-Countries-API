@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Search from "./components/Search";
 
-function App() {
+import Countries from "./components/Countries";
+import axios from "axios";
+import Spinner from "./components/Spinner";
+
+const App = () => {
+  const [countries, setCountries] = useState([]);
+  const [search, setSearch] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get("https://restcountries.eu/rest/v2/all").then((res) => {
+      setCountries(res.data);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  onchange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const countryFiltered = countries.filter((country) => {
+    return country.name.toLowerCase().includes(search.toLowerCase());
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Search onchange={onchange} />
+      <Countries
+        countryFiltered={countryFiltered}
+        setIsLoading={setIsLoading}
+      />
     </div>
   );
-}
+};
 
 export default App;
