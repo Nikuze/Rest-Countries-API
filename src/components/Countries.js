@@ -1,5 +1,6 @@
 import React from "react";
 import CountriesItems from "./CountryItems";
+
 const Countries = ({ countryFiltered }) => {
   return (
     <div className="countries-description">

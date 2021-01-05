@@ -11,17 +11,6 @@ const Search = ({ onchange }) => {
           placeholder="Search for a Country"
         />
       </div>
-
-      <div className="countries-groups">
-        <select className="research-filter">
-          <option value="">Filter by Region</option>
-          <option value="">Africa</option>
-          <option value="">America</option>
-          <option value="">Asia</option>
-          <option value="">Europe</option>
-          <option value="">Oceania</option>
-        </select>
-      </div>
     </div>
   );
 };
