@@ -9,12 +9,13 @@ import Spinner from "./components/Spinner";
 const App = () => {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
+  const [filteredCountries, setFilteredCountries] = useState(countries);
   const [isLoading, setIsLoading] = useState(true);
-  const [region, setRegion] = useState("");
 
   useEffect(() => {
     axios.get("https://restcountries.eu/rest/v2/all").then((res) => {
       setCountries(res.data);
+      setFilteredCountries(res.data);
       setIsLoading(false);
     });
   }, []);
@@ -27,19 +28,31 @@ const App = () => {
     setSearch(e.target.value);
   };
 
-  const countryFiltered = countries.filter((country) => {
-    return (
-      country.name.toLowerCase().includes(search.toLowerCase()) ||
-      country.region.toLowerCase().includes(region.toLowerCase())
-    );
-  });
+  const searchCountries = (event) => {
+    const newCountries = countries.filter((country) => {
+      return country.name
+        .toLowerCase()
+        .includes(event.target.value.toLowerCase());
+    });
+    setFilteredCountries(newCountries);
+  };
+
+  const filterbyRegion = (region) => {
+    if (region === "All") setFilteredCountries(countries);
+    else {
+      const newCountries = countries.filter((country) => {
+        return country.region.toLowerCase().includes(region.toLowerCase());
+      });
+      setFilteredCountries(newCountries);
+    }
+  };
 
   return (
     <div>
-      <Search onchange={onchange} />
-      <Filter setRegion={setRegion} />
+      <Search onchange={searchCountries} />
+      <Filter filterbyRegion={filterbyRegion} />
       <Countries
-        countryFiltered={countryFiltered}
+        countryFiltered={filteredCountries}
         setIsLoading={setIsLoading}
       />
     </div>

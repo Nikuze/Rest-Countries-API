@@ -1,13 +1,13 @@
 import React from "react";
 
-const Filter = ({ setRegion }) => {
+const Filter = ({ filterbyRegion }) => {
   return (
     <div className="countries-groups">
       <select
         className="research-filter"
-        onChange={(e) => setRegion(e.target.value)}
+        onChange={(event) => filterbyRegion(event.target.value)}
       >
-        <option value="All">Filter by Region</option>
+        <option value="All">All</option>
         <option value="Africa">Africa</option>
         <option value="Americas">Americas</option>
         <option value="Asia">Asia</option>
