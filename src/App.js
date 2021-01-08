@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <div>
-      <Search onchange={searchCountries} />
+      <Search onchange={searchCountries} search={search} />
       <Filter filterbyRegion={filterbyRegion} />
       <Countries
         countryFiltered={filteredCountries}
