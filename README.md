@@ -1,7 +1,6 @@
 A good programmer must always be ready to face different challenges, be ready to solve different problems of everyday life.
 That's why I have to learn to surpass myself, by facing different challenges.
 
-# My name is Diop Nikuze from Burundi !
 
 Challenge given by Frontend Mentor : https://www.frontendmentor.io/
 # Challenge is to integrate with the REST Countries API to pull country data and display it like in the designs.
