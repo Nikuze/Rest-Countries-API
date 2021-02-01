@@ -6,7 +6,7 @@ That's why I have to learn to surpass myself, by facing different challenges.
 Challenge given by Frontend Mentor :
 # Challenge is to integrate with the REST Countries API to pull country data and display it like in the designs.
 
-]Users should be able to : 
+Users should be able to : 
 
 - See all countries from the API on the homepage
 - Search for a country using an input field
